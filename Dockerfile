@@ -17,9 +17,10 @@ RUN yarn install
 
 # Build the Next.js application
 RUN yarn build
+RUN yarn install serve
 
 # Expose the port the app runs on
 EXPOSE 3000
 
 # Command to run the application
-CMD ["npm", "run", "start"]
+CMD ["serve", "-s", "dist"]

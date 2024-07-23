@@ -105,7 +105,7 @@ const RestaurantReport = () => {
 
     return (
         <div className="flex flex-col sm:p-8 p-2">
-            <Dialog visible={activeOrder !== null} onHide={() => setActiveOrder(null)}>
+            <Dialog visible={activeOrder !== null} header={<h3>ออเดอร์หมายเลข {activeOrder?.id}</h3>} onHide={() => setActiveOrder(null)}>
                 {activeOrder?.order_product_items && (
                     <DataTable value={activeOrder.order_product_items}>
                         <Column header={"สินค้า"} field="product.name"></Column>
@@ -156,7 +156,7 @@ const RestaurantReport = () => {
                             field="selectedProduct.id"
                             body={(row, rIdx) => (
                                 <p onClick={() => handleRemoveRow(row.id)} className="text-red-500">
-                                    ลบ
+                                    ลบ {row?.id}
                                 </p>
                             )}></Column>
                         <Column header="เลขโต๊ะ" field="table_number"></Column>

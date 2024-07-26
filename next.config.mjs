@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone',
-    // exportTrailingSlash: true,
-    // distDir: 'dist'
+    output: 'export',
+    distDir: 'out',
+    exportTrailingSlash: true,
 };
 
 export default nextConfig;

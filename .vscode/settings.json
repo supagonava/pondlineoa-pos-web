@@ -4,5 +4,6 @@
         ".vscode{,/**}",
         ".next",
         ".env.local"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "None"
 }

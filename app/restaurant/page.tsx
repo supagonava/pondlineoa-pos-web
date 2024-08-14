@@ -33,6 +33,12 @@ const RestaurantPage = () => {
         unLoading();
     }
 
+    function handleNavigateToExpense() {
+        onLoading();
+        router.push("/restaurant/expense");
+        unLoading();
+    }
+
     function handleNavigateToPos() {
         onLoading();
         router.push("/restaurant/pos");
@@ -58,7 +64,7 @@ const RestaurantPage = () => {
                     <>
                         <div className="flex flex-col gap-1 w-full justify-center items-center p-8">
                             <div className="flex flex-col sm:flex-row justify-center items-center gap-2">
-                                <p>ยินดีต้อนรับ! {user.name}</p>
+                                <p className="text-lg">ยินดีต้อนรับ! {user.name}</p>
                                 <p className="text-blue-500 underline cursor-pointer" onClick={() => logout()}>
                                     ออกจากระบบ
                                 </p>
@@ -74,7 +80,7 @@ const RestaurantPage = () => {
                                 }}>
                                 <div className="flex justify-center gap-2 w-full items-center">
                                     <FA.FaChartLine className="text-white" />
-                                    <p className="text-white">รายงาน</p>
+                                    <p className="text-lg text-white">รายงาน</p>
                                 </div>
                             </Button>
                             <Button
@@ -86,7 +92,13 @@ const RestaurantPage = () => {
                                 }}>
                                 <div className="flex justify-center gap-2 w-full items-center">
                                     <MdInventory className="text-white" />
-                                    <p>สต็อก</p>
+                                    <p className="text-lg">รายการสินค้า</p>
+                                </div>
+                            </Button>
+                            <Button severity="secondary" size="small" className="col-span-1" onClick={() => handleNavigateToExpense()}>
+                                <div className="flex justify-center gap-2 w-full items-center">
+                                    <MdInventory className="text-white" />
+                                    <p className="text-lg">ค่าใช้จ่าย</p>
                                 </div>
                             </Button>
                             <Button
@@ -98,7 +110,7 @@ const RestaurantPage = () => {
                                 }}>
                                 <div className="flex justify-center gap-2 w-full items-center">
                                     <BsCashCoin className="text-white" />
-                                    <p>ขายสินค้า</p>
+                                    <p className="text-lg">ขายสินค้า</p>
                                 </div>
                             </Button>
                         </div>
